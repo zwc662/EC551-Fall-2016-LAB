@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "X:/EC551/FIFO/Big_Channel.xst" -ofn "X:/EC551/FIFO/Big_Channel.syr" 
+xst -intstyle ise -ifn "X:/EC551/FIFO/Big_Channel.xst" -ofn "X:/EC551/FIFO/Big_Channel.syr" 
+xst -intstyle ise -ifn "X:/EC551/FIFO/Big_Channel.xst" -ofn "X:/EC551/FIFO/Big_Channel.syr" 
+xst -intstyle ise -ifn "X:/EC551/FIFO/Big_Channel.xst" -ofn "X:/EC551/FIFO/Big_Channel.syr" 
+xst -intstyle ise -ifn "X:/EC551/FIFO/Big_Channel.xst" -ofn "X:/EC551/FIFO/Big_Channel.syr" 

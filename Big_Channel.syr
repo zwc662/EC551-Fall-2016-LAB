@@ -1,0 +1,499 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: Big_Channel.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Big_Channel.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Big_Channel"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : Big_Channel
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Channel.v" into library work
+Parsing verilog file "definitions.vh" included at line 1.
+Parsing module <Channel>.
+Analyzing Verilog file "\\ad\eng\users\z\w\zwc662\EC551\FIFO\ipcore_dir\FIFO.v" into library work
+Parsing module <FIFO>.
+Analyzing Verilog file "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Accumulator.v" into library work
+Parsing verilog file "definitions.vh" included at line 1.
+Parsing module <Accumulator>.
+Analyzing Verilog file "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Channel_Accumulator.v" into library work
+Parsing verilog file "definitions.vh" included at line 1.
+Parsing module <Channel_Accumulator>.
+WARNING:HDLCompiler:751 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Channel_Accumulator.v" Line 47: Redeclaration of ansi port mult_rd_en is not allowed
+WARNING:HDLCompiler:751 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Channel_Accumulator.v" Line 49: Redeclaration of ansi port mult_out is not allowed
+Analyzing Verilog file "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v" into library work
+Parsing verilog file "definitions.vh" included at line 1.
+Parsing module <Big_Channel>.
+Analyzing Verilog file "\\ad\eng\users\z\w\zwc662\EC551\FIFO\ipcore_dir\FIFO_synth.v" into library work
+Parsing module <FIFO3>.
+Analyzing Verilog file "\\ad\eng\users\z\w\zwc662\EC551\FIFO\ipcore_dir\FIFO2_synth.v" into library work
+Parsing module <FIFO2>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v" Line 46: Port mult_out is not connected to this instance
+
+Elaborating module <Big_Channel>.
+
+Elaborating module <Channel_Accumulator>.
+
+Elaborating module <Channel>.
+
+Elaborating module <FIFO>.
+WARNING:HDLCompiler:1499 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\ipcore_dir\FIFO.v" Line 39: Empty module <FIFO> remains a black box.
+
+Elaborating module <Accumulator>.
+WARNING:HDLCompiler:634 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Channel_Accumulator.v" Line 65: Net <Reset> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Big_Channel>.
+    Related source file is "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v".
+INFO:Xst:3210 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v" line 46: Output port <mult_out> of the instance <channels[3].CH> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v" line 46: Output port <mult_rd_en> of the instance <channels[3].CH> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v" line 46: Output port <mult_out> of the instance <channels[2].CH> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v" line 46: Output port <mult_rd_en> of the instance <channels[2].CH> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v" line 46: Output port <mult_out> of the instance <channels[1].CH> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v" line 46: Output port <mult_rd_en> of the instance <channels[1].CH> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v" line 46: Output port <mult_out> of the instance <channels[0].CH> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Big_Channel.v" line 46: Output port <mult_rd_en> of the instance <channels[0].CH> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <Big_Channel> synthesized.
+
+Synthesizing Unit <Channel_Accumulator>.
+    Related source file is "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Channel_Accumulator.v".
+WARNING:Xst:653 - Signal <Reset> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <Channel_Accumulator> synthesized.
+
+Synthesizing Unit <Channel>.
+    Related source file is "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Channel.v".
+    Register <vec_val_rd_en> equivalent to <matrix_val_rd_en> has been removed
+    Found 1-bit register for signal <matrix_val_rd_en>.
+    Found 8x8-bit multiplier for signal <mult> created at line 44.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   1 D-type flip-flop(s).
+Unit <Channel> synthesized.
+
+Synthesizing Unit <Accumulator>.
+    Related source file is "\\ad\eng\users\z\w\zwc662\EC551\FIFO\Accumulator.v".
+    Register <mult_rd_en> equivalent to <col_id_rd_en> has been removed
+    Found 16-bit register for signal <wr_data>.
+    Found 1-bit register for signal <wr_en>.
+    Found 1-bit register for signal <col_id_rd_en>.
+    Found 8-bit register for signal <wr_addr>.
+    Found 16-bit adder for signal <wr_data[15]_mult_out[15]_add_2_OUT> created at line 67.
+    Found 8-bit comparator not equal for signal <n0004> created at line 64
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  26 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <Accumulator> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 4
+ 8x8-bit multiplier                                    : 4
+# Adders/Subtractors                                   : 4
+ 16-bit adder                                          : 4
+# Registers                                            : 20
+ 1-bit register                                        : 12
+ 16-bit register                                       : 4
+ 8-bit register                                        : 4
+# Comparators                                          : 4
+ 8-bit comparator not equal                            : 4
+# Multiplexers                                         : 4
+ 16-bit 2-to-1 multiplexer                             : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/FIFO.ngc>.
+Loading core <FIFO> for timing and area information for instance <fifo_mult_>.
+
+Synthesizing (advanced) Unit <Accumulator>.
+The following registers are absorbed into accumulator <wr_data>: 1 register on signal <wr_data>.
+Unit <Accumulator> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 4
+ 8x8-bit multiplier                                    : 4
+# Accumulators                                         : 4
+ 16-bit up loadable accumulator                        : 4
+# Registers                                            : 44
+ Flip-Flops                                            : 44
+# Comparators                                          : 4
+ 8-bit comparator not equal                            : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Big_Channel> ...
+
+Optimizing unit <Accumulator> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Big_Channel, actual ratio is 3.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <channels[0].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <channels[0].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <channels[0].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <channels[1].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <channels[1].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <channels[1].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <channels[2].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <channels[2].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <channels[2].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <channels[3].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <channels[3].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <channels[3].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <channels[0].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <channels[0].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <channels[0].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <channels[1].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <channels[1].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <channels[1].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <channels[2].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <channels[2].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <channels[2].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <channels[3].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <channels[3].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <channels[3].CH/CH0/fifo_mult_> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 108
+ Flip-Flops                                            : 108
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Big_Channel.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 342
+#      GND                         : 9
+#      INV                         : 8
+#      LUT2                        : 36
+#      LUT3                        : 80
+#      LUT4                        : 24
+#      LUT5                        : 4
+#      LUT6                        : 56
+#      MUXCY                       : 60
+#      VCC                         : 1
+#      XORCY                       : 64
+# FlipFlops/Latches                : 232
+#      FD                          : 28
+#      FDC                         : 4
+#      FDCE                        : 56
+#      FDE                         : 96
+#      FDP                         : 48
+# RAMS                             : 4
+#      RAMB8BWER                   : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 221
+#      IBUF                        : 109
+#      OBUF                        : 112
+# DSPs                             : 4
+#      DSP48A1                     : 4
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             232  out of  18224     1%  
+ Number of Slice LUTs:                  208  out of   9112     2%  
+    Number used as Logic:               208  out of   9112     2%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    322
+   Number with an unused Flip Flop:      90  out of    322    27%  
+   Number with an unused LUT:           114  out of    322    35%  
+   Number of fully used LUT-FF pairs:   118  out of    322    36%  
+   Number of unique control sets:        41
+
+IO Utilization: 
+ Number of IOs:                         222
+ Number of bonded IOBs:                 222  out of    232    95%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                2  out of     32     6%  
+    Number using Block RAM only:          2
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of DSP48A1s:                      4  out of     32    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 236   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.624ns (Maximum Frequency: 275.912MHz)
+   Minimum input arrival time before clock: 6.044ns
+   Maximum output required time after clock: 4.089ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.624ns (frequency: 275.912MHz)
+  Total number of paths / destination ports: 3368 / 480
+-------------------------------------------------------------------------
+Delay:               3.624ns (Levels of Logic = 4)
+  Source:            channels[0].CH/A0/col_id_rd_en (FF)
+  Destination:       channels[0].CH/CH0/fifo_mult_/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: channels[0].CH/A0/col_id_rd_en to channels[0].CH/CH0/fifo_mult_/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.447   0.849  channels[0].CH/A0/col_id_rd_en (channels[0].CH/A0/col_id_rd_en)
+     begin scope: 'channels[0].CH/CH0/fifo_mult_:rd_en'
+     LUT2:I0->O            9   0.203   0.934  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/ram_rd_en_i1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_rd_en)
+     LUT6:I4->O            1   0.203   0.684  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_comb5 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_comb5)
+     LUT5:I3->O            2   0.203   0.000  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_comb7 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_comb)
+     FDP:D                     0.102          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i
+    ----------------------------------------
+    Total                      3.624ns (1.158ns logic, 2.466ns route)
+                                       (32.0% logic, 68.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 1260 / 228
+-------------------------------------------------------------------------
+Offset:              6.044ns (Levels of Logic = 3)
+  Source:            vec_val<7> (PAD)
+  Destination:       channels[0].CH/CH0/fifo_mult_/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
+  Destination Clock: clk rising
+
+  Data Path: vec_val<7> to channels[0].CH/CH0/fifo_mult_/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  vec_val_7_IBUF (vec_val_7_IBUF)
+     DSP48A1:B7->M15       1   3.364   0.579  channels[0].CH/CH0/Mmult_mult (channels[0].CH/CH0/mult<15>)
+     begin scope: 'channels[0].CH/CH0/fifo_mult_:din<15>'
+     begin scope: 'channels[0].CH/CH0/fifo_mult_/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:DINA<15>'
+     RAMB8BWER:DIBDI11         0.300          ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    ----------------------------------------
+    Total                      6.044ns (4.886ns logic, 1.158ns route)
+                                       (80.8% logic, 19.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 112 / 112
+-------------------------------------------------------------------------
+Offset:              4.089ns (Levels of Logic = 1)
+  Source:            channels[3].CH/A0/wr_en (FF)
+  Destination:       wr_en<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: channels[3].CH/A0/wr_en to wr_en<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              19   0.447   1.071  channels[3].CH/A0/wr_en (channels[3].CH/A0/wr_en)
+     OBUF:I->O                 2.571          wr_en_3_OBUF (wr_en<3>)
+    ----------------------------------------
+    Total                      4.089ns (3.018ns logic, 1.071ns route)
+                                       (73.8% logic, 26.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.624|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.40 secs
+ 
+--> 
+
+Total memory usage is 258348 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :   32 (   0 filtered)
+

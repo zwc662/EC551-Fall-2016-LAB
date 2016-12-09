@@ -1,0 +1,7 @@
+verilog work "Channel.v"
+verilog work "ipcore_dir/FIFO.v"
+verilog work "Accumulator.v"
+verilog work "Channel_Accumulator.v"
+verilog work "Big_Channel.v"
+verilog work "ipcore_dir/FIFO_synth.v"
+verilog work "ipcore_dir/FIFO2_synth.v"

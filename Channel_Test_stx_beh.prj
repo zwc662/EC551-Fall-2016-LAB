@@ -1,0 +1,5 @@
+verilog isim_temp "ipcore_dir/FIFO_synth.v"
+verilog isim_temp "ipcore_dir/FIFO.v"
+verilog isim_temp "Channel.v"
+verilog isim_temp "Channel_Test.v"
+verilog isim_temp "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v"
